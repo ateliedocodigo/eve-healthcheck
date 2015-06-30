@@ -17,7 +17,7 @@ setuptools.setup(
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
     ],
-    keyword="example boilerplate",
+    keywords="example boilerplate",
     packages=setuptools.find_packages(exclude=["tests"]),
     install_requires=[],
     test_suite="tests",
