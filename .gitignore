@@ -1,5 +1,7 @@
+htmlcov/
 build/
 dist/
 .tox/
+.coverage
 *.egg-info
 *.pyc
