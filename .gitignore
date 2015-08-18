@@ -1,6 +1,7 @@
 htmlcov/
 build/
 dist/
+docs/_build/
 .tox/
 .coverage
 *.egg-info
