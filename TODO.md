@@ -1,0 +1,6 @@
+TODO
+====
+
+[ ] .editorconfig
+[ ] .gitignore
+[ ] Makefile
