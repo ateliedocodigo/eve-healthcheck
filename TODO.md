@@ -1,6 +1,9 @@
 TODO
 ====
 
-[ ] .editorconfig
-[ ] .gitignore
-[ ] Makefile
+* [ ] .editorconfig
+* [ ] .bumpversion
+* [ ] .gitignore
+* [ ] Makefile
+* [ ] README
+* [ ] CHANGELOG
