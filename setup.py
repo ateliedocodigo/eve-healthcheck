@@ -6,8 +6,8 @@ setuptools.setup(
     version="0.1",
     description="Python boilerplate project",
     url="https://github.com/westphahl/boilerplate",
-    author="Simon Westphahl",
-    author_email="westphahl@gmail.com",
+    author="Luis Fernando Gomes",
+    author_email="luiscoms@ateliedocodigo.com.br",
     license="MIT",
     classifiers=[  # See: https://pypi.python.org/pypi?%3Aaction=list_classifier
         "Development Status :: 1 - Planning",
