@@ -1,7 +1,11 @@
-import unittest
+import pytest
 
 
-class TestExample(unittest.TestCase):
+class TestExample(object):
 
     def test_example(self):
-        self.assertTrue(True)
+        assert True, "This should not fail"
+
+    @pytest.mark.xfail
+    def test_failing(self):
+        assert False, "This will always fail"
