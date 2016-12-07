@@ -6,3 +6,13 @@ Boilerplate
 
 This project servers as an example of a Python package with some boilerplate
 code already in place.
+
+TODO
+----
+
+* [x] .editorconfig
+* [ ] .bumpversion
+* [ ] .gitignore
+* [ ] Makefile
+* [ ] README
+* [x] CHANGELOG

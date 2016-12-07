@@ -1,0 +1,17 @@
+root = true
+
+[{*.{json,py,yml},Makefile}]
+charset = utf-8
+trim_trailing_whitespace = true
+end_of_line = lf
+
+# Para arquivos JSON e YAML
+[*.{json,yml}]
+# Indentação em 2 espaços
+indent_style = space
+indent_size = 2
+# Para arquivos Makefile
+
+[Makefile]
+# Indentação deve ser por tabs
+indent_style = tab
