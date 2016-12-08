@@ -7,3 +7,5 @@ env:
   - TOXENV=py27
   - TOXENV=py3
   - TOXENV=docs
+after_success:
+  - coveralls
