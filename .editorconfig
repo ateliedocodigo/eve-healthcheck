@@ -1,6 +1,6 @@
 root = true
 
-[{*.{json,py,yml},Makefile}]
+[{*.{cfg,json,py,yml},Makefile}]
 charset = utf-8
 trim_trailing_whitespace = true
 end_of_line = lf
