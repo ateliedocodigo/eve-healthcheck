@@ -13,7 +13,7 @@ TODO
 
 * [x] .editorconfig
 * [ ] .bumpversion
-* [ ] .gitignore
+* [x] .gitignore
 * [ ] Makefile
 * [ ] README
 * [x] CHANGELOG
