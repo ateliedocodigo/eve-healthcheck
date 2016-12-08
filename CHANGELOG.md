@@ -1,7 +1,7 @@
 Boilerplate
 ===========
 
-Next Version
+Next Release
 -----
 
 * Initial release

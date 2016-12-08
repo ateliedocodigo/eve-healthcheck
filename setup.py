@@ -1,9 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import setuptools
 
+from boilerplate import __version__
 
 setuptools.setup(
     name="boilerplate",
-    version="0.1",
+    version=__version__,
     description="Python boilerplate project",
     url="https://github.com/westphahl/boilerplate",
     author="Luis Fernando Gomes",

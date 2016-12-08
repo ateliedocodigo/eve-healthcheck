@@ -12,7 +12,7 @@ TODO
 ----
 
 * [x] .editorconfig
-* [ ] .bumpversion
+* [x] .bumpversion
 * [x] .gitignore
 * [ ] Makefile
 * [ ] README
