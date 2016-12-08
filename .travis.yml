@@ -1,6 +1,7 @@
 language: python
+python: 3
 install:
-  - pip3 install tox
+  - pip install tox
 script:
   - tox
 env:
