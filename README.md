@@ -14,6 +14,6 @@ TODO
 * [x] .editorconfig
 * [x] .bumpversion
 * [x] .gitignore
-* [ ] Makefile
+* [x] Makefile
 * [ ] README
 * [x] CHANGELOG
