@@ -8,12 +8,27 @@ Boilerplate
 This project servers as an example of a Python package with some boilerplate
 code already in place.
 
+Running tests with `tox`
+----
+
+Install `tox`
+```
+$ pip install tox
+```
+
+Run tests
+
+```
+tox
+```
+
+
 TODO
 ----
 
 * [x] .editorconfig
 * [x] .bumpversion
 * [x] .gitignore
+* [x] CHANGELOG
 * [x] Makefile
 * [ ] README
-* [x] CHANGELOG
