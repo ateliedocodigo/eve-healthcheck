@@ -1,3 +1,4 @@
+-rrequirements.txt
 bumpversion==0.5.3
 coverage==4.2
 coveralls==1.1
