@@ -23,14 +23,20 @@ connection like:
 
 .. code:: json
 
-    {'hostname': 'localhost',
-     'results': [{'checker': 'database_check',
-                  'expires': 1487655119.5796409,
-                  'output': 'Database OK',
-                  'passed': True,
-                  'timestamp': 1487655092.5796409}],
-     'status': 'success',
-     'timestamp': 1487655092.5820687}
+    {
+      "hostname":"localhost",
+      "results":[
+        {
+          "checker":"database_check",
+          "expires":1487655119.5796409,
+          "output":"Database OK",
+          "passed":true,
+          "timestamp":1487655092.5796409
+        }
+      ],
+      "status":"success",
+      "timestamp":1487655092.5820687
+    }
 
 Running tests with ``tox``
 --------------------------
