@@ -1,28 +1,37 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from os.path import abspath, dirname, join
 import setuptools
 
+__version__ = "0.1.0"
+__project_name__ = "eve-healthcheck"
+__repo__ = "https://github.com/ateliedocodigo/eve-healthcheck"
+
+
+def read(fname):
+    with open(join(abspath(dirname(__file__)), fname)) as thefile:
+        return thefile.read()
+    # return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setuptools.setup(
-    name="boilerplate",
-    version="0.1",
-    description="Python boilerplate project",
-    url="https://github.com/westphahl/boilerplate",
+    name=__project_name__,
+    version=__version__,
+    description="Python {} project".format(__project_name__),
+    long_description=read("README.rst"),
     author="Luis Fernando Gomes",
     author_email="luiscoms@ateliedocodigo.com.br",
+    url=__repo__,
+    download_url="{}/tarball/{}".format(__repo__, __version__),
     license="MIT",
-    classifiers=[  # See: https://pypi.python.org/pypi?%3Aaction=list_classifier
-        "Development Status :: 1 - Planning",
+    classifiers=[
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Topic :: Software Development",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
     ],
-    keywords="example boilerplate",
+    keywords="healthckeck eve_healthcheck",
     packages=setuptools.find_packages(exclude=["tests", "tests.*"]),
-    install_requires=[],
-    entry_points={
-        "console_scripts": [
-            "boilerplate_script = boilerplate.script:main"
-        ]
-    }
+    install_requires=read("requirements.txt"),
 )

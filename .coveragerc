@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = boilerplate
+source = eve_healthcheck
 
 [report]
 show_missing = True

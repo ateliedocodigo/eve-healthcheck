@@ -1,4 +1,6 @@
 language: python
+services: mongodb
+python: 3.5
 install:
   - pip install tox
 script:
@@ -6,4 +8,4 @@ script:
 env:
   - TOXENV=py27
   - TOXENV=py3
-  - TOXENV=docs
+  - TOXENV=coveralls

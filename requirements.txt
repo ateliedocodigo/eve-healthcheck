@@ -1,5 +1,2 @@
-pep8
-twine
-tox
-coverage
-sphinx
+eve
+py-healthcheck
