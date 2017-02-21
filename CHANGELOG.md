@@ -1,4 +1,4 @@
-Boilerplate
+eve-healthckeck
 ===========
 
 Next Release

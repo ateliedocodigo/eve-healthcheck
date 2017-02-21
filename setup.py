@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*-
 import setuptools
 
-from boilerplate import __version__
+__version__ = "0.0.0"
+__project_name__ = "eve-healthcheck"
+__repo__ = "https://github.com/ateliedocodigo/eve-healthcheck"
 
 setuptools.setup(
-    name="boilerplate",
+    name=__project_name__,
     version=__version__,
-    description="Python boilerplate project",
-    url="https://github.com/westphahl/boilerplate",
+    description="Python {} project".format(__project_name__),
+    url=__repo__,
+    download_url="{}/tarball/{}".format(__repo__, __version__),
     author="Luis Fernando Gomes",
     author_email="luiscoms@ateliedocodigo.com.br",
     license="MIT",
@@ -20,12 +23,12 @@ setuptools.setup(
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
     ],
-    keywords="example boilerplate",
+    keywords="example eve_healthcheck",
     packages=setuptools.find_packages(exclude=["tests", "tests.*"]),
     install_requires=[],
     entry_points={
         "console_scripts": [
-            "boilerplate_script = boilerplate.script:main"
+            "eve_healthcheck_script = eve_healthcheck.script:main"
         ]
     }
 )
