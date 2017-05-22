@@ -1,8 +1,8 @@
-eve-healthcheck
+eve-healthcheck |Latest Version|
 ===============
 
 |Build Status| |Requirements Status| |Coverage Status|
-
+    
 `eve-healthcheck`_ is project that servers healthcheck urls used to
 monitor your application `Eve`_ powered RESTful API.
 
@@ -23,14 +23,27 @@ connection like:
 
 .. code:: json
 
-    {'hostname': 'localhost',
-     'results': [{'checker': 'database_check',
-                  'expires': 1487655119.5796409,
-                  'output': 'Database OK',
-                  'passed': True,
-                  'timestamp': 1487655092.5796409}],
-     'status': 'success',
-     'timestamp': 1487655092.5820687}
+    {
+      "hostname":"localhost",
+      "results":[
+        {
+          "checker":"database_check",
+          "expires":1487655119.5796409,
+          "output":"Database OK",
+          "passed":true,
+          "timestamp":1487655092.5796409
+        }
+      ],
+      "status":"success",
+      "timestamp":1487655092.5820687
+    }
+
+Installation
+------------
+
+::
+
+    $ pip install eve-healthcheck
 
 Running tests with ``tox``
 --------------------------
@@ -50,9 +63,14 @@ Run tests
 .. _eve-healthcheck: https://pypi.python.org/pypi/eve-healthcheck
 .. _Eve: http://python-eve.org/
 
+
+.. |Latest Version| image:: https://badge.fury.io/py/eve-healthcheck.svg
+    :target: https://badge.fury.io/py/eve-healthcheck
+    
 .. |Build Status| image:: https://travis-ci.org/ateliedocodigo/eve-healthcheck.svg?branch=master
    :target: https://travis-ci.org/ateliedocodigo/eve-healthcheck
 .. |Requirements Status| image:: https://requires.io/github/ateliedocodigo/eve-healthcheck/requirements.svg?branch=master
    :target: https://requires.io/github/ateliedocodigo/eve-healthcheck/requirements/?branch=master
 .. |Coverage Status| image:: https://coveralls.io/repos/github/ateliedocodigo/eve-healthcheck/badge.svg?branch=master
    :target: https://coveralls.io/github/ateliedocodigo/eve-healthcheck?branch=master
+  
