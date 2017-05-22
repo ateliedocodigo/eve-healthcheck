@@ -1,5 +1,5 @@
 eve-healthcheck |Latest Version|
-===============
+--------------------------------
 
 |Build Status| |Requirements Status| |Coverage Status|
     
