@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import logging
 
 from healthcheck import HealthCheck
 
-import logging
-
 
 class EveHealthCheck(object):
-
     def __init__(self, app=None, healthcheck_uri='/healthcheck', *argv, **kw):
         self.logger = logging.getLogger(self.__module__)
         self.hc = HealthCheck(*argv, **kw)
@@ -25,9 +23,10 @@ class EveHealthCheck(object):
             return True, "Database OK"
 
         self.hc.add_check(database_check)
-        app.add_url_rule(healthcheck_uri, healthcheck_uri, view_func=lambda: self.hc.run())
+
+        uri = "{}{}".format(app.api_prefix, healthcheck_uri)
+        app.add_url_rule(uri, uri, view_func=lambda: self.hc.run(), methods=['GET', 'OPTIONS'])
         for k, v in app.config.get('DOMAIN', {}).items():
-            self.logger.debug("Adding uri /{}{}".format(k, healthcheck_uri))
-            app.add_url_rule("/{}{}".format(k, healthcheck_uri),
-                             "/{}{}".format(k, healthcheck_uri),
-                             view_func=lambda: self.hc.run())
+            uri = "{}/{}{}".format(app.api_prefix, k, healthcheck_uri)
+            self.logger.debug("Adding uri {}".format(uri))
+            app.add_url_rule(uri, uri, view_func=lambda: self.hc.run(), methods=['GET', 'OPTIONS'])
