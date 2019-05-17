@@ -18,7 +18,7 @@ Usage
     hc = EveHealthCheck(app, '/healthcheck')
     ...
 
-This will add an url ``/healthckeck`` that will check database
+This will add an url ``/healthcheck`` that will check database
 connection like:
 
 .. code:: json
@@ -49,6 +49,13 @@ Running tests with ``tox``
 --------------------------
 
 Install ``tox``
+
+* Need a mongodb server running on localhost
+
+::
+
+    $ docker run --rm -p 27017:27017 mongo
+
 
 ::
 
