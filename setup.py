@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from os.path import abspath, dirname, join
+
 import setuptools
 
 __version__ = "0.2.0"
@@ -12,6 +13,7 @@ def read(fname):
     with open(join(abspath(dirname(__file__)), fname)) as thefile:
         return thefile.read()
     # return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 setuptools.setup(
     name=__project_name__,
@@ -31,7 +33,7 @@ setuptools.setup(
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
     ],
-    keywords="healthckeck eve_healthcheck",
+    keywords="healthcheck eve_healthcheck",
     packages=setuptools.find_packages(exclude=["tests", "tests.*"]),
     install_requires=read("requirements.txt"),
 )

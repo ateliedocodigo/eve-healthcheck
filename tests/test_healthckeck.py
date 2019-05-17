@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from eve_healthcheck import EveHealthCheck
-
-from tests import TestBase
+from tests import fail_check, TestBase
 
 
 class TestEveHealthchek(TestBase):
@@ -21,8 +20,6 @@ class TestEveHealthchek(TestBase):
         self.assertEqual(200, r.status_code)
 
     def test_failing_check(self):
-        def fail_check():
-            return False, "FAIL"
 
         self.hc.hc.add_check(fail_check)
         r = self.test_client.get(self.healthcheck_uri)
@@ -32,7 +29,7 @@ class TestEveHealthchek(TestBase):
         self.assertEqual("failure", jr["status"])
 
     def test_database_success_check(self):
-        # ckeck eatch domain
+        # check each domain
         for k, v in self.app.config.get('DOMAIN', {}).items():
             r = self.test_client.get("/{}{}".format(k, self.healthcheck_uri))
             self.assertEqual(200, r.status_code)
@@ -43,7 +40,7 @@ class TestEveHealthchek(TestBase):
     def test_database_failure_check(self):
         # set an invalid database
         self.app.config['MONGO_URI'] = 'mongodb://invalid.db.net/db'
-        # ckeck eatch domain
+        # check each domain
         for k, v in self.app.config.get('DOMAIN', {}).items():
             r = self.test_client.get("/{}{}".format(k, self.healthcheck_uri))
 
@@ -59,7 +56,7 @@ class TestEveHealthchek(TestBase):
         # Recreate the healthcheck object in order to get utl prefix
         self.hc = EveHealthCheck(self.app, self.healthcheck_uri)
 
-        # ckeck eatch domain
+        # check each domain
         for k, v in self.app.config.get('DOMAIN', {}).items():
             r = self.test_client.get("/{}/{}{}".format(url_prefix, k, self.healthcheck_uri))
 
@@ -76,7 +73,7 @@ class TestEveHealthchek(TestBase):
         # Recreate the healthcheck object in order to get utl prefix
         self.hc = EveHealthCheck(self.app, self.healthcheck_uri)
 
-        # ckeck eatch domain
+        # check each domain
         for k, v in self.app.config.get('DOMAIN', {}).items():
             r = self.test_client.get("/{}/{}{}".format(url_prefix, k, self.healthcheck_uri))
 
@@ -92,7 +89,7 @@ class TestEveHealthchek(TestBase):
         # Recreate the healthcheck object in order to get utl prefix
         self.hc = EveHealthCheck(self.app, self.healthcheck_uri)
 
-        # ckeck eatch domain
+        # check each domain
         for k, v in self.app.config.get('DOMAIN', {}).items():
             r = self.test_client.get("/{}/{}{}".format(api_version, k, self.healthcheck_uri))
 
@@ -109,7 +106,7 @@ class TestEveHealthchek(TestBase):
         # Recreate the healthcheck object in order to get utl prefix
         self.hc = EveHealthCheck(self.app, self.healthcheck_uri)
 
-        # ckeck eatch domain
+        # check each domain
         for k, v in self.app.config.get('DOMAIN', {}).items():
             r = self.test_client.get("/{}/{}{}".format(api_version, k, self.healthcheck_uri))
 

@@ -6,18 +6,17 @@ import os
 import unittest
 
 import eve
-from bson import ObjectId
-from flask_pymongo import MongoClient
-
-from tests.test_settings import \
-    MONGO_HOST, MONGO_PORT, \
-    MONGO_USERNAME, MONGO_PASSWORD, MONGO_DBNAME
+from pymongo import MongoClient
 
 from eve_healthcheck import EveHealthCheck
+from tests.test_settings import MONGO_DBNAME, MONGO_HOST, MONGO_PASSWORD, MONGO_PORT, MONGO_USERNAME
+
+
+def fail_check():
+    return False, "FAIL"
 
 
 class TestBase(unittest.TestCase):
-
     healthcheck_uri = '/h'
 
     def setUp(self, settings=None):
@@ -30,14 +29,12 @@ class TestBase(unittest.TestCase):
         self.settings = settings
         self.app = eve.Eve(settings=self.settings)
 
-        self.test_client = self.app.test_client()
         self.domain = self.app.config['DOMAIN']
 
         self.hc = EveHealthCheck(self.app, self.healthcheck_uri)
 
     def tearDown(self):
         del self.app
-        del self.test_client
         del self.hc
         self.dropDB()
 
@@ -60,3 +57,17 @@ class TestBase(unittest.TestCase):
         except ValueError:
             v = None
         return v
+
+    def assertSuccessCheck(self, response):
+        self.assertEqual(200, response.status_code)
+        jr = self.parse_response(response)
+        self.assertEqual("success", jr["status"])
+
+    def assertFailureCheck(self, response):
+        self.assertEqual(500, response.status_code)
+        jr = self.parse_response(response)
+        self.assertEqual("failure", jr["status"])
+
+    @property
+    def test_client(self):
+        return self.app.test_client()

@@ -1,4 +1,4 @@
-eve-healthckeck
+eve-healthcheck
 ===========
 
 0.2.0
