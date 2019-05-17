@@ -15,6 +15,9 @@ matrix:
       dist: xenial # required for Python >= 3.7
       env:
         - TOXENV=py3
+    - python: 3.7
+      dist: xenial
+      env:
         - TOXENV=coveralls
 before_install:
   - pip install --upgrade pip

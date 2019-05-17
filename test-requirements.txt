@@ -3,3 +3,4 @@ coverage<5
 coveralls<2
 flake8
 nose<2
+PyYAML<6 # required for coveralls
