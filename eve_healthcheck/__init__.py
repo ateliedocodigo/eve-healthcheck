@@ -15,10 +15,12 @@ def view_health_func(hc, resource=None):
         None,
         None,
         status,
-        [(k, v) for k, v in headers.items()],
+        None,
     )
 
-    return send_response(resource, response)
+    resp = send_response(resource, response)
+    [resp.headers.set(k, v) for k, v in headers.items()]
+    return resp
 
 
 def check_wrapper(app):
