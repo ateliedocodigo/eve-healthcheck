@@ -4,7 +4,7 @@ from os.path import abspath, dirname, join
 
 import setuptools
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 __project_name__ = "eve-healthcheck"
 __repo__ = "https://github.com/ateliedocodigo/eve-healthcheck"
 
